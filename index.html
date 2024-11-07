@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/ui-lightness/jquery-ui.css">
+    
+</head>
+<body>
+    <p id="message"> ボタンを押してね！ </p>
+    
+    <div class="roulette" style = "display:none;">
+       
+        <img src="./images/angel.png" width="250" height="250">
+        <img src="./images/king.png" width="250" height="250">
+        <img src="./images/death.png" width="250" height="250">
+    </div>
+    
+    <div id="button">
+        <button class="start" onclick="audio()">START</button>
+    
+        <audio id="btn-audio">
+            <source src="./music/select.mp3" type="audio/mp3">
+        </audio>
+        <button class="stop" onclick="audio()" onclick="GetRandomNumber();"> STOP </button>
+    
+    </div>
+
+
+<!-- スピード設定用のスイッチ -->
+<label for="speedInput">Speed:</label>
+<input type="number" id="speedInput" value="10" min="1" max="100">
+
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+<script src="roulette.js"></script>
+<script>
+    function audio() {
+            document.getElementById("btn-audio").currentTime = 0;
+            document.getElementById("btn-audio").play();
+        }
+    
+jQuery(function(){
+// initialize!
+var option = {
+speed : 10,
+duration : 5,
+//stopImageNumber : 0,  数字を指定すると任意の画像にとまる
+}
+
+$('div.roulette').roulette(option);
+    
+// START!
+$('.start').click(function(){
+    option.speed = parseInt($('speedInput').val()); 
+    $('div.roulette').roulette(option);  // ルーレットを再初期化
+    $('div.roulette').roulette('start');
+});
+    // スピードの変更時にルーレットを再初期化
+    //$('#speedInput').on('change', function () {
+
+// STOP!
+$('.stop').click(function(){
+$('div.roulette').roulette('stop');
+});
+});
+</script>
+    <!-- JqueryはJSの参照用コードの上に配置 -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+<script src="./js/test.js"></script>
+</body>
+</html>

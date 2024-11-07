@@ -1,0 +1,89 @@
+    body {
+    background-image: url("./images/sky.png");
+    height:100px;
+    text-align: center;
+}
+
+.roulette {
+    margin-left: 500px;
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: ;
+}
+
+.start, .stop {
+    text-align: center;
+    width: 100px;
+    margin-top: 100px;
+    border: 10px ridge #00688c;
+}
+
+.start:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;}
+
+.stop:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
+}
+
+
+/* .anim-box {
+    background: linear-gradient(to right, #362ae0 0%, #3b79cc 50%, #42d3ed 100%);
+    border-radius: 5px;
+    max-width: 400px;
+    height: 250px;
+} */
+
+
+#message {
+    font-size: 50px; 
+    color: white;   
+    margin-top: 5%;
+}
+
+#playBtn1 {
+    margin-top: 5%;
+width: 200px;
+height: 50px;
+border: 10px ridge #00688c;
+}
+
+#playBtn2 {
+    width: 200px;
+    height: 50px;
+    border: 10px ridge #00688c;
+}
+
+.button1 {    
+margin-top: 0;
+    text-align: center;
+}
+
+#playBtn1:hover {
+    background-color: #2f2a20;
+    color: #fff;
+}
+
+#playBtn2:hover {
+    background-color: #2f2a20;
+    color: #fff;
+}
+
+.button2 {
+    margin-top: 2%;
+   
+text-align: center;
+}
+
+#omikuji {
+    width: 200px;
+    height: auto;
+}
+
